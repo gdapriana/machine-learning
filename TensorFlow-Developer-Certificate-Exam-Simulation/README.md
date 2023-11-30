@@ -8,19 +8,19 @@ Welcome to TensorFlow Developer Certificate (TFDC) exam simulation from Dicoding
 In each simulation, the exam will test you on this set of skills (please refer to the Candidate Handbook for the details of each category):
 
 #### Tensorflow developer skills
-You need to demonstrate that you understand how to develop software programs using TensorFlow and that you can find the information you need to work as an ML practitioner.
+> You need to demonstrate that you understand how to develop software programs using TensorFlow and that you can find the information you need to work as an ML practitioner.
 
 #### Building and training neural network models using TensorFlow
-You need to understand the foundational principles of machine learning and deep learning using TensorFlow 2.x.
+> You need to understand the foundational principles of machine learning and deep learning using TensorFlow 2.x.
 
 #### Image Classification
-You need to understand how to build image recognition and object detection models with deep neural networks and convolutional neural networks using TensorFlow 2.x.
+> You need to understand how to build image recognition and object detection models with deep neural networks and convolutional neural networks using TensorFlow 2.x.
 
 #### Natural language processing (NLP)
-You need to understand how to use neural networks to solve natural language processing problems using TensorFlow.
+> You need to understand how to use neural networks to solve natural language processing problems using TensorFlow.
 
 #### Time Series, sequence, and predictions
-You need to understand how to solve time series and forecasting problems in TensorFlow.
+> You need to understand how to solve time series and forecasting problems in TensorFlow.
 
 ### Simulation Guideline:
 
@@ -37,11 +37,11 @@ You need to understand how to solve time series and forecasting problems in Tens
 ---
 
 ## About the Tensorflow Developer Certificate Exam
-```
-The TensorFlow Developer Certificate exam tests a developer's foundational knowledge of integrating machine learning into tools and applications. The certificate program requires an understanding of building TensorFlow models using Computer Vision, Convolutional Neural Networks, Natural Language Processing, and real-world image data and strategies. TensorFlow Developers who have passed the certificate exam have demonstrated skills needed to perform machine learning and deep learning tasks. Below are the requirements for taking the exam. Requirements are subject to change without prior notice. The latest requirements are available on the Google Developers Certification website.
-```
 
-Language
+>The TensorFlow Developer Certificate exam tests a developer's foundational knowledge of integrating machine learning into tools and applications. The certificate program requires an understanding of building TensorFlow models using Computer Vision, Convolutional Neural Networks, Natural Language Processing, and real-world image data and strategies. TensorFlow Developers who have passed the certificate exam have demonstrated skills needed to perform machine learning and deep learning tasks. Below are the requirements for taking the exam. Requirements are subject to change without prior notice. The latest requirements are available on the Google Developers Certification website. 
+
+
+#### Language
 
 The exam tests students in their ability to solve problems by building models using TensorFlow 2.x. The exam is available only in English at this time.
 
