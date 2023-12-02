@@ -34,16 +34,52 @@ def solution_A2():
     zip_ref.close()
 
     TRAINING_DIR = 'data/horse-or-human'
-    train_datagen = ImageDataGenerator(
-        # YOUR CODE HERE)
+    VALIDATING_DIR = 'data/validation-horse-or-human'
+    train_datagen = ImageDataGenerator(rescale=1 / 255)
+    validation_datagen = ImageDataGenerator(rescale=1 / 255)
 
     # YOUR IMAGE SIZE SHOULD BE 150x150
-    train_generator=# YOUR CODE HERE
+    train_generator = train_datagen.flow_from_directory(
+        TRAINING_DIR,
+        target_size=(150, 150),
+        batch_size=128,
+        class_mode='binary'
+    )
 
-    model=tf.keras.models.Sequential([
-        # YOUR CODE HERE, end with a Neuron Dense, activated by sigmoid
-                tf.keras.layers.Dense(1, activation='sigmoid')
-        ])
+    validation_generator = validation_datagen.flow_from_directory(
+        VALIDATING_DIR,
+        target_size=(150, 150),
+        batch_size=128,
+        class_mode='binary'
+    )
+
+    model = tf.keras.models.Sequential([
+        tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)),
+        tf.keras.layers.MaxPooling2D((2, 2)),
+        tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+        tf.keras.layers.MaxPooling2D((2, 2)),
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(1, activation='sigmoid')
+    ])
+
+    model.compile(optimizer=RMSprop(learning_rate=0.001), loss='binary_crossentropy', metrics=['accuracy'])
+
+    class Callback(tf.keras.callbacks.Callback):
+        def on_epoch_end(self, epoch, logs={}):
+            if (logs.get("accuracy") > 0.83):
+                print("\nReached 83% accurcy so stopping the execution of the program!")
+                self.model.stop_training = True
+
+    model.fit(
+        train_generator,
+        steps_per_epoch=8,
+        epochs=15,
+        validation_data=validation_generator,
+        validation_steps=8,
+        verbose=1,
+        callbacks=[Callback()]
+    )
 
     return model
 
